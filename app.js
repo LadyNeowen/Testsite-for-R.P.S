@@ -1,0 +1,150 @@
+var you;
+var yourScore = 0;
+var opponent;
+var opponentScore = 0;
+
+var choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+
+window.onload = function () {
+    for (let i = 0; i < choices.length; i++) {
+        let choice = document.createElement('img');
+        choice.id = choices[i];
+        choice.src = choices[i] + '.jpg';
+        choice.addEventListener('click', selectChoice);
+        document.getElementById('choices').append(choice);
+    }
+}
+
+function selectChoice () {
+    you = this.id;
+    document.getElementById('your-choice').src = you + '.jpg';
+
+    // random for opponent
+
+    opponent = choices[Math.floor(Math.random() * 5)]; 
+    document.getElementById('opponents-choice').src = opponent + '.jpg'
+
+
+// check for winner
+if (you == opponent) {
+    yourScore += 1;
+    opponentScore += 1;
+} 
+else {
+    if (you == 'rock') {
+        if (opponent == 'scissors', 'lizard') {
+            yourScore += 1;
+        } 
+        else if (opponent == 'paper', 'spock') {
+            opponentScore += 1;
+        }
+    
+    }
+   else if (you == 'paper') {
+        if (opponent == 'rock', 'spock') {
+            yourScore += 1;
+        } 
+        else if (opponent == 'scissors', 'lizard') {
+            opponentScore += 1;
+        }
+    
+    }
+   else if (you == 'scissors') {
+        if (opponent == 'paper', 'lizard') {
+            yourScore += 1;
+        } 
+        else if (opponent == 'rock', 'spock') {
+            opponentScore += 1;
+        }
+    
+    }
+   else if (you == 'lizard') {
+        if (opponent == 'spock', 'paper') {
+            yourScore += 1;
+        } 
+        else if (opponent == 'rock', 'scissors') {
+            opponentScore += 1;
+        }
+    
+    }
+   else if (you == 'spock') {
+        if (opponent == 'scissors' 'rock') {
+            yourScore += 1;
+        } 
+        else if (opponent == 'paper', 'lizard') {
+            opponentScore += 1;
+        }
+    
+    }
+  }
+   
+   
+   document.getElementById('your-score').innerText = yourScore;
+   document.getElementById('opponent-score').innerText = opponentScore;
+}
+
+/*
+if(you === opponent){
+        result.textContent = "Would you look at that! It's a tie!"
+    }
+    else if(you == 'rock'){
+        if(opponent == 'paper', 'spock'){
+            result.textContent = 'Computer Won.';
+            opponentScore++;
+            opponentScoreBoard.textContent = opponentScore;
+
+        }else{
+            result.textContent = 'You Won!'
+            yourScore++;
+            yourScoreBoard.textContent = yourScore;
+        }
+    }
+    else if(you == 'scissors'){
+        if(opponent == 'rock', 'spock'){
+            result.textContent = 'Computer Won.';
+            opponentScore++;
+            opponentScoreBoard.textContent = opponentScore;
+        }else{
+            result.textContent = 'You Won!';
+            yourScore++;
+            yourScoreBoard.textContent = yourScore;
+        }
+    }
+    else if(you == 'paper'){
+        if(opponent == 'scissors', 'lizard'){
+            result.textContent = 'Computer Won.';
+            opponentScore++;
+            opponentScoreBoard.textContent = opponentScore;
+        }else{
+            result.textContent = 'You Won!';
+            yourScore++;
+            yourScoreBoard.textContent = yourScore;
+        }
+    }
+    else if(you == 'lizard'){
+        if(opponent == 'rock', 'scissors'){
+            result.textContent = 'Computer Won.';
+            opponentScore++;
+            opponentScoreBoard.textContent = opponentScore;
+        }else{
+            result.textContent = 'You Won!';
+            yourScore++;
+            yourScoreBoard.textContent = yourScore;
+        }
+    }
+    else if(you == 'spock'){
+        if(opponent == 'lizard', 'paper'){
+            result.textContent = 'Computer Won.';
+            opponentScore++;
+            opponentScoreBoard.textContent = opponentScore;
+        }else{
+            result.textContent = 'You Won!';
+            yourScore++;
+            yourScoreBoard.textContent = yourScore;
+        }
+
+        document.getElementById('your-score').innerText = yourScore;
+        document.getElementById('opponent-score').innerText = opponentScore;
+    }
+
+    */
