@@ -30,53 +30,91 @@ if (you == opponent) {
     yourScore += 1;
     opponentScore += 1;
 } 
+
 else {
     if (you == 'rock') {
-        if (opponent == 'scissors', 'lizard') {
+        if (opponent == 'scissors') {
+            yourScore += 1;
+        if (opponent == 'lizard') {
             yourScore += 1;
         } 
-        else if (opponent == 'paper', 'spock') {
-            opponentScore += 1;
+    }
+        else if (opponent == 'paper') {
+                 opponentScore += 1;
+              if (opponent == 'spock') {
+                opponentScore += 1;
         }
-    
+    } 
+
+
     }
    else if (you == 'paper') {
-        if (opponent == 'rock', 'spock') {
+        if (opponent == 'rock') {
+            yourScore += 1;
+          if (opponent == 'spock') {
             yourScore += 1;
         } 
-        else if (opponent == 'scissors', 'lizard') {
+    } 
+        else if (opponent == 'scissors') {
+            opponentScore += 1;
+            if (opponent == 'lizard') {
             opponentScore += 1;
         }
-    
+    }
+
+
+
     }
    else if (you == 'scissors') {
-        if (opponent == 'paper', 'lizard') {
+        if (opponent == 'paper') {
+            yourScore += 1;
+            if (opponent == 'lizard') {
             yourScore += 1;
         } 
-        else if (opponent == 'rock', 'spock') {
+    } 
+        else if (opponent == 'rock') {
+            opponentScore += 1;
+            if (opponent == 'spock') {
             opponentScore += 1;
         }
-    
+    }
+
+
+
     }
    else if (you == 'lizard') {
-        if (opponent == 'spock', 'paper') {
+        if (opponent == 'spock') {
+            yourScore += 1;
+            if (opponent =='paper') {
             yourScore += 1;
         } 
-        else if (opponent == 'rock', 'scissors') {
+    } 
+        else if (opponent == 'rock') {
+            opponentScore += 1;
+            if (opponent == 'scissors') {
             opponentScore += 1;
         }
-    
+    }
+
+
+
     }
    else if (you == 'spock') {
-        if (opponent == 'scissors' 'rock') {
+        if (opponent == 'scissors') {
+            yourScore += 1;
+            if (opponent == 'rock') {
             yourScore += 1;
         } 
-        else if (opponent == 'paper', 'lizard') {
+    } 
+        else if (opponent == 'paper') {
+            opponentScore += 1;
+            if (opponent == 'lizard') {
             opponentScore += 1;
         }
-    
     }
   }
+
+}
    
    
    document.getElementById('your-score').innerText = yourScore;
